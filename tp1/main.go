@@ -30,4 +30,3 @@ func main() {
 
 	e.Logger.Fatal(e.Start(":" + httpPort))
 }
-
