@@ -10,4 +10,3 @@ set -m
 echo 'toto $i' > /tmp/testy
 
 fg
-
