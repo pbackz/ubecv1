@@ -7,12 +7,7 @@ metadata:
 data:
   # property-like keys; each key maps to a simple value
   player_initial_lives: "3"
-  ui_properties_file_name: "user-interface.properties"
 
-  # file-like keys
-  game.properties: |
-    enemy.types=aliens,monsters
-    player.maximum-lives=5    
   user-interface.properties: |
     color.good=purple
     color.bad=yellow
@@ -36,11 +31,6 @@ spec:
             configMapKeyRef:
               name: game-demo           # The ConfigMap this value comes from.
               key: player_initial_lives # The key to fetch.
-        - name: UI_PROPERTIES_FILE_NAME
-          valueFrom:
-            configMapKeyRef:
-              name: game-demo
-              key: ui_properties_file_name
       volumeMounts:
       - name: config
         mountPath: "/config"
@@ -53,7 +43,5 @@ spec:
         name: game-demo
         # An array of keys from the ConfigMap to create as files
         items:
-        - key: "game.properties"
-          path: "game.properties"
         - key: "user-interface.properties"
           path: "user-interface.properties"

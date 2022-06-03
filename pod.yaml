@@ -4,6 +4,7 @@ metadata:
   name: debian
   labels:
     app: debian
+  namespace: toto
 spec:
   containers:
   - name: debian
